@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid #e9e9e9;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        th,td{
+            padding:8px 16px;
+            border: 1px solid #e9e9e9;
+            text-align: left;
+        }
+        th{
+            background-color: #f7f7f7;
+            color:#5c6b77;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>书籍名称</th>
+                    <th>出版日期</th>
+                    <th>价格</th>
+                    <th>购买数量</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(book,index) in books" :key="book.id">
+                    <td>{{index+1}}</td>
+                    <td>{{book.name}}</td>
+                    <td>{{book.date}}</td>
+                    <td>{{book.price|showPrice}}</td>
+                    <td>
+                        <button @click="addAndReduce(-1,index)" :disabled="book.count==1">-</button>
+                        {{book.count}}
+                        <button @click="addAndReduce(1,index)">+</button>
+                    </td>
+                    <td>
+                        <button @click="bookRemove(index)">移除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>总价：{{totalPrice|showPrice}}</div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                books:[
+                    {id:'1111',name:'《算法导论》',date:'2006-9',price:85,count:2},
+                    {id:'2222',name:'《unix编程艺术》',date:'2006-2',price:59,count:1},
+                    {id:'3333',name:'《编程珠玑》',date:'2008-10',price:39,count:1},
+                    {id:'4444',name:'《代码大全》',date:'2006-3',price:128,count:1}
+                ],
+                disabled:false
+            },
+            computed:{
+                totalPrice:function(){
+                    
+                   let res= this.books.reduce(function(preValue,book){
+                        return preValue+(book.price*book.count)
+                    },0)
+                    return res
+                }
+            },
+            methods:{
+                addAndReduce(num,index){
+                    this.books[index].count+=num
+                   
+                },
+                bookRemove(index){
+                    this.books.splice(index,1)
+                }
+            },
+            filters:{
+                showPrice(price){
+                    return '￥'+price.toFixed(2)
+                }
+            }
+        })
+       
+    </script>
+</body>
+</html>
