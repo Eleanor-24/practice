@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #AFB5C0;
+        }
+        input{
+            border: none;
+        }
+        .main{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        .clearFixed::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .header{
+            height: 160px;
+            background-color: pink;
+        }
+        .header .h_top{
+            height: 40px;
+            background-color: #32373E;
+        }
+        .h_top .topCon{
+            
+            height: 40px;
+            
+            
+        }
+        .h_top .topCon .conLeft{
+            
+            height: 40px;
+            line-height: 40px;
+           
+            
+        }
+        .h_top .topCon .conLeft .leftText1{
+            height: 40px;
+            
+        }
+        .h_top .topCon .conLeft .leftText1 .logo{
+                font-size: 22px;
+                color: #00B38A;
+                margin-right: 32px;
+                
+        }
+        .h_top .topCon .conLeft .leftText1 .city{
+            font-size: 13px;
+            color: #00B38A;
+            margin-right: 30px;
+        }
+        
+        .h_top .topCon .conLeft .ulList li{
+            float: left;
+            font-size: 13px;
+            width: 70px;
+            text-align: center;
+            
+           
+        }
+        .h_top .topCon .conLeft .ulList li:first-child{
+            background-color: #24282C;
+
+        }
+        .h_top .topCon .conLeft .ulList li:first-child a{
+            color: #fff;
+            
+        }
+        .h_top .topCon .conRight{
+            /* width: 300px; */
+            height: 40px;
+            line-height: 40px;
+            font-size: 13px;
+            
+        
+            
+        }
+        .h_top .topCon .conRight .ulList li{
+            
+            float: left;
+            
+        }
+        .h_top .topCon .conRight .ulList a{
+            
+            display: block;
+            
+        }
+        .h_top .topCon .conRight .ulList .btn{
+            background-image: url("http://www.lgstatic.com/lg-www-fed/common/widgets/header_c/modules/topbar/img/icon_login@2x_a6d7b9d.png");
+            background-repeat: no-repeat;
+            background-size: 18px;
+            background-position: 5px 11px;
+        }
+        .h_top .topCon .conRight .ulList .login{
+            padding-left: 28px;
+            
+        }
+        .h_top .topCon .conRight .ulList .register{
+            margin-right: 28px;
+        }
+        .h_top .topCon .conRight .ulList span{
+            padding:0 10px;
+        }
+        .header .h_bottom{
+            height: 120px;
+            background-color:#00B38A;
+        }
+        
+        .h_bottom .botCon{
+           
+            height: 120px;
+            
+        }
+        .h_bottom .botCon .conLeft{
+            /* width: 556px; */
+            height:120px;
+           
+            display: flex;
+            
+        }
+        .h_bottom .botCon .conLeft .left .leftImage{
+            width: 228px;
+            height: 120px;
+        }
+        .h_bottom .botCon .conLeft .right{
+            display: flex;
+            flex-direction: column;
+        }
+        .h_bottom .botCon .conLeft .right .rightImage{
+            width: 334px;
+            height: 30px;
+            margin-top: 36px;
+        }
+        .h_bottom .botCon .conLeft .right .rightText{
+            color: #fff;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .h_bottom .botCon  .conRight{
+            
+            height: 120px;
+            
+        }
+        .h_bottom .botCon  .conRight{
+            display: flex;
+            align-items: center;
+        }
+        .h_bottom .botCon  .conRight .btnBox{
+            height: 36px;
+            
+            display: flex;
+            align-items: center;
+            color: #757575;
+            font-size: 12px;
+            
+        }
+        .h_bottom .botCon  .conRight .btnBox .text1{
+                width: 163px;
+                height: 36px;
+                margin-right: 10px;
+                text-indent: 10px;
+        }
+        .h_bottom .botCon  .conRight .btnBox .pBtn{
+            width: 148px;
+            height: 36px;
+            margin-right: 10px;
+            background-color:#fff;
+            /* display: flex; */
+
+        }
+        .h_bottom .botCon  .conRight .btnBox .pBtn .text2{
+            height: 36px;
+            width: 94px;
+            text-indent: 10px;
+        }
+        .h_bottom .botCon  .conRight .btnBox .pBtn .aTxt{
+            padding: 6px 4px 9px;
+            color: #00B38A;
+        }
+        .h_bottom .botCon  .conRight .btnBox .btnSub{
+            width: 106px;
+            height: 36px;
+            border: 1px solid #ccefe7;
+            color: #ccefe7;
+            background-color: transparent;
+        }
+        .search{
+            width: 100%;
+            height: 132px;
+            display: flex;
+            align-items: center;
+            background-color: #F2F5F4;
+        }
+        .search .searchBox{
+            
+            width: 938px;
+            margin: 0 auto;
+            
+        }
+        .search .searchBox .boxTop{
+            width: 938px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+        }
+        .search .searchBox .boxTop .searchCon{
+            height: 22px;
+            width: 762px;
+            padding: 12px 16px;
+        }
+        .search .searchBox .boxTop .searchBtn{
+            flex: 1;
+            text-align: center;
+            height: 46px;
+            font-size: 16px;
+            color: #ccefe7;
+            background-color:#00B38A;
+        }
+        .search .searchBox .boxBottom{
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
+        }
+        .banner{
+            
+           
+            padding-top: 46px;
+            
+        }
+        .banner .banLeft{
+            width: 300px;
+            
+            
+        }
+        .banner .banLeft .banList li{
+            margin-bottom: 34px;
+        }
+        
+        .banner .banLeft .banList li a{
+            font-size: 12px;
+            color:#555;
+            padding: 0 13px;
+        }
+        .banner .banLeft .banList li a:first-child{
+            font-size: 16px;
+            color: #000;
+            padding:0;
+        }
+        .banner .banLeft .banList li span{
+            font-family: "宋体";
+            margin-top: 5px;
+            color: #555;
+        }
+        .banner .banRight{
+            width: 840px;
+            height: 347px;
+            
+            position: relative;
+        }
+        .banner .banRight .banImage{
+            height: 347px;
+            width: 840px;
+        }
+        .banner .banRight span{
+            
+            width: 22px;
+            height: 34px;
+            font-size: 34px;
+            color: #757478;
+            position: absolute;
+            top: 50%;
+            margin-top: -17px;
+            font-family: "宋体";
+            display: none;
+        }
+        .banner .banRight:hover span{
+            display: block;
+        }
+        .banner .banRight span:hover{
+            color: #fff;
+        }
+        .banner .banRight .lt{
+            left: 20px;
+        }
+        .banner .banRight .gt{
+            right: 20px;
+        }
+        .content .line1{
+            margin-top: 20px;
+        }
+        .content .lineTop{
+            height: 118px;
+            
+        }
+        .content .lineTop .top1{
+            height: 53px;
+            border-bottom: 1px solid #e0e0e0;
+            line-height: 53px;
+            
+        }
+        .content .lineTop .top1 .hot{
+            padding-bottom: 15px;
+            border-bottom: 2px solid #000;
+            font-size: 16px;
+            color: #000;
+            margin-right: 60px;
+        }
+        .content .lineTop .top2{
+            height: 66px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+           
+
+        }
+        .content .lineTop .top2 span{
+            background-color: #e6e6e6;
+            color: #fff;
+            width: 18px;
+            height: 18px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 14px;
+            
+        }
+        .content .lineTop .top2 .text{
+            margin-right: 22px;
+            color: #999;
+        }
+        .content .lineTop .top2 .link{
+            color: #00B38A;
+        }
+        .content .line1 .contUl {
+            
+           
+            margin-bottom: 15px;
+            
+        }
+        .content .line1 .contUl li{
+            margin-left: 15px;
+        }
+        .content .line1 .contUl li:first-child{
+            margin-left: 0;
+        }
+        .content .line1 .contUl .conBox{
+            width: 390px;
+            height: 200px;
+            border: 1px solid #EAEEED;
+            padding: 20px 20px 14px 20px;
+            box-sizing: border-box;
+            
+            
+            
+        }
+        .content .line1 .contUl .conBox .top{
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px dashed #e0e0e0;
+            padding-bottom: 20px;
+
+        }
+        .content .line1 .contUl .conBox .top .firstLine{
+            display: flex;
+            margin-bottom: 12px;
+        }
+        .content .line1 .contUl .conBox .top .firstLine .name{
+            margin-right: 63px;
+            color: #000;
+           
+        }
+        .content .line1 .contUl .conBox .top .firstLine .price{
+            color: #FA6041;
+        }
+        .content .line1 .contUl .conBox .top .experience{
+            color: #777;
+            font-size: 14px;
+        }
+        .content .line1 .contUl .conBox .top .type{
+            display: flex;
+            margin-top: 12px;
+        }
+        .content .line1 .contUl .conBox .top .type li{
+            border: 1px solid #e0e0e0;
+            padding:5px 20px;
+            margin-right: 10px;
+            font-size: 12px;
+            color: #999;
+        }
+        .content .line1 .contUl .conBox .bottom{
+            display: flex;
+            margin-top: 18px;
+        }
+        .content .line1 .contUl .conBox .bottom .left img{
+            width: 40px;
+            height: 40px;
+        }
+        .content .line1 .contUl .conBox .bottom .right{
+            display: flex;
+            flex-direction: column;
+            margin-left: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="header">
+            <div class="h_top">
+                <div class="topCon main clearFixed">
+                    <div class="conLeft fl">
+                        <div class="leftText1 fl">
+                            <a href="#" class="logo">拉钩</a>
+                            <a href="#" class="city">全国站</a>
+                        </div>
+                        <ul class="ulList clearFixed fl">
+                            <li><a href="#">首页</a></li>  
+                            <li><a href="#">公司</a></li>  
+                            <li><a href="#">校园招聘</a></li>  
+                            <li><a href="#">职位</a></li>  
+                            <li><a href="#">言职</a></li>  
+                            <li><a href="#">课程</a></li>  
+                            <li><a href="#">APP</a></li>  
+                        </ul>
+                    </div>
+                    <div class="conRight fr">
+                        <ul class="ulList clearFixed">
+                            <li><a href="#" class="login btn">登录</a></li>
+                            <li><a href="#" class="register"><span>|</span>注册</a></li>
+                            <li><a href="#" class="register">拉钩APP</a></li>
+                            <li><a href="#">进入企业版</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="h_bottom">
+                <div class="botCon main clearFixed">
+                    <div class="conLeft fl">
+                        <div class="left">
+                            <img class="leftImage" src="http://www.lgstatic.com/lg-www-fed/common/widgets/un_login_banner/img/logo_41a2761.png" alt="">
+                        </div>
+                        <div class="right">
+                            <img class="rightImage" src="http://www.lgstatic.com/lg-www-fed/common/widgets/un_login_banner/img/text_4434674.png" alt="">
+                            <p class="rightText">1060390家公司 | 8001671个职位，在拉勾等你</p>
+                        </div>
+                    </div>
+                    <div class="conRight fr clearFixed">
+                        <div class="btnBox">
+                            <input type="text" class="text1" placeholder="请输入手机号" class="fl">
+                            <p class="fl pBtn">
+                                <input type="text" class="text2" placeholder="验证码">
+                                |
+                                <a href="#" class="aTxt">获取</a>
+                            </p>
+                            <input type="submit"  value="登录/注册" class="fl btnSub">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search">
+            <div class="searchBox">
+                <div class="boxTop">
+                    <input type="text" placeholder="搜索职位、公司或地点" class="searchCon">
+                    <input type="submit" value="搜索" class="searchBtn">  
+                </div>
+                <div class="boxBottom">
+                    <span style="font-size: 12px; color: #939494;">热门搜索：</span>
+                    <span style="font-size: 14px; color: #00B38A;">2020年度TOP公司榜</span>
+                </div>
+                
+            </div>
+        </div>
+        <div class="banner main clearFixed">
+            <div class="banLeft fl">
+                <ul class="banList">
+                    <li>
+                        <a href="#">技术</a>
+                        <a href="#">JAVA</a>
+                        <a href="#">PHP</a>
+                        <a href="#">区块链</a>
+                        <span class="fr">&gt;</span>
+                    </li>
+                    <li>
+                        <a href="#">技术</a>
+                        <a href="#">JAVA</a>
+                        <a href="#">PHP</a>
+                        <a href="#">区块链</a>
+                        <span class="fr">&gt;</span>
+                    </li>
+                    <li>
+                        <a href="#">技术</a>
+                        <a href="#">JAVA</a>
+                        <a href="#">PHP</a>
+                        <a href="#">区块链</a>
+                        <span class="fr">&gt;</span>
+                    </li>
+                    <li>
+                        <a href="#">技术</a>
+                        <a href="#">JAVA</a>
+                        <a href="#">PHP</a>
+                        <a href="#">区块链</a>
+                        <span class="fr">&gt;</span>
+                    </li>
+                    <li>
+                        <a href="#">技术</a>
+                        <a href="#">JAVA</a>
+                        <a href="#">PHP</a>
+                        <a href="#">区块链</a>
+                        <span class="fr">&gt;</span>
+                    </li>
+                    <li>
+                        <a href="#">技术</a>
+                        <a href="#">JAVA</a>
+                        <a href="#">PHP</a>
+                        <a href="#">区块链</a>
+                        <span class="fr">&gt;</span>
+                    </li>
+                    <li>
+                        <a href="#">技术</a>
+                        <a href="#">JAVA</a>
+                        <a href="#">PHP</a>
+                        <a href="#">区块链</a>
+                        <span class="fr">&gt;</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="banRight fr">
+                <a href="#">
+                    <span class="lt">&lt;</span>
+                    <img class="banImage" src="https://www.lgstatic.com/i/image/M00/72/1D/Ciqc1F_A1ZKAEfuyAAEQkmLVIXo734.JPG" alt="">
+                    <span class="gt">&gt;</span>
+                </a>
+
+            </div>
+        </div>
+        <div class="content main">
+            <div class="line1 ">
+                <div class="lineTop">
+                    <div class="top1">
+                        <a href="#" class="hot">24Hour热门</a>
+                        <a href="#" style="color: #999;">最新职位</a>
+                    </div>
+                    <div class="top2">
+                        <span>?</span>
+                        <div class="text">过去24小时，最多人看过的岗位在这里</div>
+                        <a href="#" class="link">我知道了</a>
+
+                    </div>
+                </div>
+                <ul class="contUl clearFixed">
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="contUl clearFixed">
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="contUl clearFixed">
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+               
+                
+            </div>
+            <div class="line1 ">
+                <div class="lineTop">
+                    <div class="top1">
+                        <a href="#" class="hot">互联网热门公司榜</a>
+                        
+                    </div>
+                    <div class="top2">
+                        <span>?</span>
+                        <div class="text">互联网行业实力热门企业</div>
+                        <a href="#" class="link">我知道了</a>
+
+                    </div>
+                </div>
+                <ul class="contUl clearFixed">
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="contUl clearFixed">
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="contUl clearFixed">
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="conBox">
+                            <div class="top">
+                                <div class="firstLine">
+                                    <a href="#" class="name" >BD商务经理<span style="color: #999;margin-left: 10px; font-size: 14px;">[13:04发布]</span></a>
+                                    <div class="price">10k-20k</div>
+                                </div>
+                                <div class="experience">经验不限/大专</div>
+                                <ul class="type">
+                                    <li>广告营销</li>
+                                    <li>移动互联网</li>
+                                    <li>商务拓展</li>
+                                </ul>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <img src="http://www.lgstatic.com/thumbnail_100x100/image1/M00/43/10/Cgo8PFXO6pmAIdroAAA4xeY0nNs763.jpg?cc=0.7170892173890024" alt="">
+                                </div>
+                                <div class="right">
+                                    <div class="company" style="color: #777;">Synet</div>
+                                    <div class="detail" style="color: #999; font-size: 14px;">移动互联网,社交/不需要融资/上海</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+               
+                
+            </div>
+        </div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>
