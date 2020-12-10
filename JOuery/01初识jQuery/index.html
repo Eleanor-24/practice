@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            border: 1px solid #666;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div class="box2"></div>
+    <div id="box3"></div>
+    <script>
+        // 通过原生js查找三个盒子
+        var box1 = document.getElementsByTagName('div')[0];
+        var box2 = document.getElementsByClassName('box2')[0];
+        var box3 = document.getElementById('box3');
+        
+        //原生js修改盒子背景
+        box1.style.backgroundColor="pink";
+        box2.style.backgroundColor="skyblue";
+        box3.style.backgroundColor="gray";
+        //jQuery查找 三个盒子
+        $(function(){
+            var $div1 = $('div');
+            var $div2 = $('.box2');
+            var $div3  =$('#box3');
+            // console.log($div1);
+            //jQuery修改背景色
+            $div1.css({
+                'background-color':'pink'
+            })
+            $div2.css({
+                'background-color':'skyblue'
+            })
+            $div3.css({
+                'background-color':'gray'
+            })
+        })
+       
+    </script>
+</body>
+</html>
