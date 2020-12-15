@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        /* 
+            1.prop方法
+            和attr方法一样
+            2.removeProp
+            和removeAttr方法一样
+
+            在具有true和false两个属性的情况使用prop，其他使用attr
+
+        */
+        $(function(){
+            console.log($("input").prop("checked"))//true
+            console.log($("input").attr("checked"))//checked
+        })
+    </script>
+</head>
+<body>
+    <span class="span1" name="id">id</span>
+    <span class="span2" name="id222">id</span>
+    <input type="checkbox" checked>
+</body>
+</html>

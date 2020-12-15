@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // 属性：对象身上保存的变量
+            /*操作属性：
+                对象.属性名称=值；
+                对象[“属性名称”]=值；
+                对象.属性名称
+                对象["属性名称"]
+            */
+           /* 属性节点
+                html标签中添加的属性就是属性节点
+                dom元素展开中attributes中保存的内容是属性节点
+
+                操作属性节点
+                dom元素.setAttribute("属性名称","值")
+                dom元素.getAttribute("属性名称")
+           */
+         var span = document.getElementsByTagName("span")[0]
+          span.setAttribute("name","eleanor")
+          console.log(span.getAttribute("name"));
+
+        })
+    </script>
+</head>
+<body>
+    <span name="name"></span>
+</body>
+</html>

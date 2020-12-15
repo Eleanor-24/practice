@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        /* 
+            1.attr(name|pro|key,val|fn)
+            作用：获取或者设置属性节点的值
+            可以传递一个参数或两个参数
+            一个参数：代表获取属性节点的值
+            两个参数：代表设置属性节点的值
+
+            获取属性节点的值，无论找到多少个元素，都只会返回第一个元素的值
+            设置属性节点的值，会对找到的所有元素设置属性值
+            如果设置的属性节点不存在会自动新增
+        */
+       /* 
+            2.删除属性节点removeAttr
+            会删除所有找到的元素的属性节点
+            接收一个参数
+
+            如果想删除元素的多个节点 用空格隔开
+
+       */
+       $(function(){
+        console.log($("span").attr("class"));
+        console.log($("span").attr("class","box"));
+        $("span").removeAttr("class name")
+       })
+       
+    </script>
+</head>
+<body>
+    <span class="span1" name="id">id</span>
+    <span class="span2" name="id222">id</span>
+</body>
+</html>
